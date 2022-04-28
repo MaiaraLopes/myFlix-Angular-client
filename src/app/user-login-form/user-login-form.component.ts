@@ -26,7 +26,7 @@ export class UserLoginFormComponent implements OnInit {
     this.fetchApiData.userLogin(this.userDetails).subscribe((result) => {
       //Successful user login
       localStorage.setItem('token', result.token);
-      localStorage.setItem('user', result.user.Username);
+      localStorage.setItem('username', result.user.Username);
       this.dialogRef.close();
       console.log(result);
       this.snackBar.open('User logged in successfully!', 'OK', {
