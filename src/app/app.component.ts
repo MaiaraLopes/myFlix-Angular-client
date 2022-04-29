@@ -10,7 +10,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 export class AppComponent {
   title = 'myFlix-Angular-client';
 
-  constructor(public dialog: MatDialog) { }
+ /* constructor(public dialog: MatDialog) { }
   
 
   //Open the list of movies when All Movies button is clicked
@@ -19,4 +19,5 @@ export class AppComponent {
       width: '500px'
     });
   }
+*/
 }
