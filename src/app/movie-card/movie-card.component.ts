@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DescriptionViewComponent } from '../description-view/description-view.component';
+import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-movie-card',
@@ -14,6 +15,7 @@ import { DescriptionViewComponent } from '../description-view/description-view.c
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   favoriteMovies: any[] = [];
+  user: any = {};
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -21,9 +23,12 @@ export class MovieCardComponent implements OnInit {
     public snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getMovies();
-    this.getFavoriteMovies();
-
+    this.fetchApiData.getAllMovies().subscribe((movies: any) => {
+      this.movies = movies;
+    })
+    this.fetchApiData.getUserProfile().subscribe((user: any) => {
+      this.user = user;
+})
   }
 
   getMovies(): void {
@@ -72,26 +77,26 @@ export class MovieCardComponent implements OnInit {
   }
 
   addFavoriteMovies(MovieID: string, title: string): void {
-    this.fetchApiData.addFavoriteMovie(MovieID).subscribe(() => {
+    this.fetchApiData.addFavoriteMovie(MovieID).subscribe((updatedUser: any) => {
+      this.user - updatedUser;
       this.snackBar.open(`${title} has been added to your favorites.`, 'OK', {
         duration: 3000
       });
-      this.ngOnInit
+      
     });
-    return this.getFavoriteMovies();
   }
 
   removeFavoriteMovies(MovieID: string, title: string): void {
-    this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe(() => {
+    this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe((updatedUser: any) => {
+      this.user = updatedUser;
       this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
         duration: 3000,
       });
-      return this.getFavoriteMovies();
     })
   }
 
   isFavorite(MovieID: string): boolean {
-    return this.favoriteMovies.includes(MovieID);
+    return this.user.FavoriteMovies.includes(MovieID);
   }
 
   toggleFavorite(movie: any): void {
