@@ -1,15 +1,24 @@
 <div class="main-page">
-  <h1>Welcome to myFlix!</h1>
-  <button
-    mat-raised-button
-    (click)="openUserRegistrationDialog()"
-    style="margin-right: 10px"
-    color="primary"
-  >
-    Sign up
-  </button>
+  <h1 class="welcome-message">Welcome to myFlix!</h1>
+  <div class="welcome-buttons">
+    <button
+      class="first-buttons"
+      mat-raised-button
+      (click)="openUserRegistrationDialog()"
+      style="margin-right: 10px"
+    >
+      Sign up
+    </button>
 
-  <button mat-raised-button (click)="openUserLoginDialog()" color="primary">
-    Login
-  </button>
+    <button
+      class="first-buttons"
+      mat-raised-button
+      (click)="openUserLoginDialog()"
+    >
+      Login
+    </button>
+  </div>
 </div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bitter&family=Josefin+Sans&family=Varela+Round&display=swap");
+</style>
