@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<h1>My Favorites</h1>
+<p *ngIf="favoriteMovies.length === 0">
+  You haven't added any movies to your favorite's list.
+</p>
+
+<div>
+  <mat-card *ngFor="let favorite of favoriteMovies">
+    <mat-card-header>
+      <mat-card-title>{{ favorite.Title }}</mat-card-title>
+      <mat-card-subtitle
+        >Directed by: {{ favorite.Director.Name }}</mat-card-subtitle
+      >
+    </mat-card-header>
+
+    <div><img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" /></div>
+
+    <mat-card-actions>
+      <button
+        mat-button
+        (click)="openGenre(favorite.Genre.Name, favorite.Genre.Description)"
+      >
+        Genre
+      </button>
+      <button
+        mat-button
+        (click)="
+          openDirector(
+            favorite.Director.Name,
+            favorite.Director.Bio,
+            favorite.Director.Birth
+          )
+        "
+      >
+        Director
+      </button>
+      <button
+        mat-button
+        (click)="openDescription(favorite.Title, favorite.Description)"
+      >
+        Description
+      </button>
+
+      <button
+        mat-icon-button
+        (click)="removeFavoriteMovies(favorite._id, favorite.title)"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

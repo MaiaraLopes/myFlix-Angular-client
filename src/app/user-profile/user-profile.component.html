@@ -47,7 +47,7 @@
         matInput
         [(ngModel)]="userDetails.Birthdate"
         placeholder="Birthdate"
-        value="{{ user.Birthdate }}"
+        value="{{ user.Birthdate | date }}"
         type="date"
         name="Birthdate"
       />
