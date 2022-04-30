@@ -1,18 +1,23 @@
 <app-navbar></app-navbar>
-<div style="display: flex">
-  <mat-card *ngFor="let movie of movies; let i = index">
+<div class="movie-card" style="display: flex">
+  <mat-card *ngFor="let movie of movies" class="individual-card">
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
         >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
       >
     </mat-card-header>
-    <img src="{{ movie.ImagePath }}" alt=" {{ movie.Title }} " />
-    <mat-card-actions>
+    <div class="img-container">
+      <img
+        src="{{ movie.ImagePath }}"
+        alt=" {{ movie.Title }} "
+        class="movie-image"
+      />
+    </div>
+    <mat-card-actions class="dialog-buttons">
       <button
         mat-button
         (click)="getGenreView(movie.Genre.Name, movie.Genre.Description)"
-        color="primary"
       >
         Genre
       </button>
@@ -25,18 +30,20 @@
             movie.Director.Birth
           )
         "
-        color="primary"
       >
         Director
       </button>
       <button
         mat-button
         (click)="getDescriptionView(movie.Title, movie.Description)"
-        color="primary"
       >
         Description
       </button>
-      <button mat-icon-button (click)="toggleFavorite(movie)">
+      <button
+        mat-icon-button
+        (click)="toggleFavorite(movie)"
+        class="action-button"
+      >
         <mat-icon *ngIf="!isFavorite(movie._id)">favorite_border</mat-icon>
         <mat-icon *ngIf="isFavorite(movie._id)">favorite</mat-icon>
       </button>
