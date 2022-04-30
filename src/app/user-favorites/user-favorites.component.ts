@@ -48,10 +48,9 @@ export class UserFavoritesComponent implements OnInit {
   }
 
   removeFavoriteMovies(MovieID: string, title: string): void {
-    this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe((resp: any) => {
-      console.log(resp);
-      this.snackBar.open(`${title} was removed from your favorites.`, 'OK', {
-        duration: 4000,
+    this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe(() => {
+      this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
+        duration: 3000,
       });
       window.location.reload();
       this.ngOnInit();
