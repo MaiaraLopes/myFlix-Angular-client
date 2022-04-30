@@ -24,11 +24,13 @@ import { DirectorViewComponent } from './director-view/director-view.component';
 import { GenreViewComponent } from './genre-view/genre-view.component';
 import { DescriptionViewComponent } from './description-view/description-view.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
-  {path: 'director', component: DirectorViewComponent},
+  { path: 'director', component: DirectorViewComponent },
+  { path: 'profile', component: UserProfileComponent},
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     DirectorViewComponent,
     GenreViewComponent,
     DescriptionViewComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
