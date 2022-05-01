@@ -51,12 +51,12 @@ export class UserFavoritesComponent implements OnInit {
     });
   }
 
-  openDirector(name: string, bio: string, birth: Date): void {
+  openDirector(name: string, bio: string, birthdate: Date): void {
     this.dialog.open(DirectorViewComponent, {
       data: {
         Name: name,
         Bio: bio,
-        Birth: birth,
+        Birthdate: birthdate,
       },
       width: '500px'
     })
