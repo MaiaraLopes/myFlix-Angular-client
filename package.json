@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+<<<<<<< HEAD
     "test": "ng test"    
+=======
+    "test": "ng test"
+>>>>>>> parent of de3ad86 (Added gh-pages)
   },
   "private": true,
   "dependencies": {
