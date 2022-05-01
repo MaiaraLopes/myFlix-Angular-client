@@ -1,7 +1,14 @@
 <mat-card>
-  <mat-card-title>{{ data.Title }}</mat-card-title>
-  <mat-dialog-content>Description: {{ data.Description }}</mat-dialog-content>
+  <mat-card-title class="name">{{ data.Title }}</mat-card-title>
+  <mat-dialog-content class="details"
+    ><b>Description:</b> {{ data.Description }}</mat-dialog-content
+  >
   <mat-card-actions>
-    <button mat-stroked-button mat-dialog-close color="primary">Close</button>
+    <button mat-stroked-button mat-dialog-close class="close-button">
+      Close
+    </button>
   </mat-card-actions>
 </mat-card>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bitter&family=Josefin+Sans&family=Varela+Round&display=swap");
+</style>

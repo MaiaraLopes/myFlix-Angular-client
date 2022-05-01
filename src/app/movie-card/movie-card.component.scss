@@ -4,16 +4,19 @@
     justify-content: center;
         
 }
+.movie-title {
+    font-family: 'Josefin Sans',
+    sans-serif;
+}
 
 .img-container {
     display: flex;
     justify-content: center;
-    
 }
 
 .movie-image {
-width: 170px;
-height: 250px;
+    width: 170px;
+    height: 250px;
 }
 
 .individual-card {
@@ -27,5 +30,5 @@ height: 250px;
 }
 
 .dialog-buttons {
-color: #38bbbb
+    color: #38bbbb
 }

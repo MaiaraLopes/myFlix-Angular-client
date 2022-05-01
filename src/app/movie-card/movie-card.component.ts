@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DescriptionViewComponent } from '../description-view/description-view.component';
-import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-movie-card',

@@ -2,7 +2,7 @@
 <div class="movie-card" style="display: flex">
   <mat-card *ngFor="let movie of movies" class="individual-card">
     <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <mat-card-title class="movie-title">{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
         >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
       >
@@ -50,3 +50,6 @@
     </mat-card-actions>
   </mat-card>
 </div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bitter&family=Josefin+Sans&family=Varela+Round&display=swap");
+</style>

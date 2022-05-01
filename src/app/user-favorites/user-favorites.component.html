@@ -1,21 +1,27 @@
 <app-navbar></app-navbar>
 <h1>My Favorites</h1>
 <p *ngIf="favoriteMovies.length === 0">
-  You haven't added any movies to your favorite's list.
+  You haven't added any movies to your favorites list.
 </p>
 
-<div>
-  <mat-card *ngFor="let favorite of favoriteMovies">
+<div class="movie-card">
+  <mat-card *ngFor="let favorite of favoriteMovies" class="individual-card">
     <mat-card-header>
-      <mat-card-title>{{ favorite.Title }}</mat-card-title>
+      <mat-card-title class="movie-title">{{ favorite.Title }}</mat-card-title>
       <mat-card-subtitle
         >Directed by: {{ favorite.Director.Name }}</mat-card-subtitle
       >
     </mat-card-header>
 
-    <div><img src="{{ favorite.ImagePath }}" alt="{{ favorite.Title }}" /></div>
+    <div class="img-container">
+      <img
+        class="movie-image"
+        src="{{ favorite.ImagePath }}"
+        alt="{{ favorite.Title }}"
+      />
+    </div>
 
-    <mat-card-actions>
+    <mat-card-actions class="dialog-buttons">
       <button
         mat-button
         (click)="openGenre(favorite.Genre.Name, favorite.Genre.Description)"
@@ -45,8 +51,11 @@
         mat-icon-button
         (click)="removeFavoriteMovies(favorite._id, favorite.title)"
       >
-        <mat-icon>favorite</mat-icon>
+        <mat-icon class="action-button">favorite</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>
 </div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bitter&family=Josefin+Sans&family=Varela+Round&display=swap");
+</style>
