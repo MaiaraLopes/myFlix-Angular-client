@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  user: any = localStorage.getItem('username');
+  user: any = {};
   
 
   @Input() userDetails = {
