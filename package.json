@@ -5,9 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch --configuration development"
   },
-  
+
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
