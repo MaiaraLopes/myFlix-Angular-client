@@ -1,34 +1,32 @@
 .main-page {
-    margin: 0 auto;
-    margin-top: 80px;
-    width: 500px;
-    border-radius: 10px;
-    padding: 50px;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    background-color: #282323;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 500px;
+  border-radius: 10px;
+  padding: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #282323;
 }
 
 .welcome-message {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    color: #EFE6D5;
-    font-size: 46px;
-    font-family: 'Josefin Sans',
-    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  color: #efe6d5;
+  font-size: 46px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .welcome-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .first-buttons {
-    background-color: #38bbbb;
-    font-size: 20px;
-    width: 140px;
+  background-color: #38bbbb;
+  font-size: 20px;
+  width: 140px;
 }

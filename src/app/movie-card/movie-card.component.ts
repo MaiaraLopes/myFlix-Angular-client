@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { DirectorViewComponent } from '../director-view/director-view.component';
-import { GenreViewComponent } from '../genre-view/genre-view.component';
-import { DescriptionViewComponent } from '../description-view/description-view.component';
-import { Router } from '@angular/router';
-
+import { Component, OnInit } from "@angular/core";
+import { FetchApiDataService } from "../fetch-api-data.service";
+import { MatDialog } from "@angular/material/dialog";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { DirectorViewComponent } from "../director-view/director-view.component";
+import { GenreViewComponent } from "../genre-view/genre-view.component";
+import { DescriptionViewComponent } from "../description-view/description-view.component";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-movie-card',
-  templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  selector: "app-movie-card",
+  templateUrl: "./movie-card.component.html",
+  styleUrls: ["./movie-card.component.scss"],
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
@@ -23,7 +22,7 @@ export class MovieCardComponent implements OnInit {
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
     public router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     if (!localStorage.getItem("username")) {
@@ -31,19 +30,11 @@ export class MovieCardComponent implements OnInit {
     } else {
       this.fetchApiData.getAllMovies().subscribe((movies: any) => {
         this.movies = movies;
-      })
+      });
       this.fetchApiData.getUserProfile().subscribe((user: any) => {
         this.user = user;
-      })
+      });
     }
-  }
-
-  getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
-      return this.movies;
-    });
   }
 
   getDirectorView(name: string, bio: string, birth: Date): void {
@@ -51,55 +42,62 @@ export class MovieCardComponent implements OnInit {
       data: {
         Name: name,
         Bio: bio,
-        Birth: birth
+        Birth: birth,
       },
-      width: '500px'
-    })
+      width: "500px",
+    });
   }
 
   getGenreView(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: {
         Name: name,
-        Description: description
+        Description: description,
       },
-      width: '500px'
-    })
+      width: "500px",
+    });
   }
 
   getDescriptionView(title: string, description: string): void {
     this.dialog.open(DescriptionViewComponent, {
       data: {
         Title: title,
-        Description: description
+        Description: description,
       },
-      width: '500px'
-    })
+      width: "500px",
+    });
   }
 
   getFavoriteMovies(): void {
     this.fetchApiData.getUserProfile().subscribe((resp: any) => {
       this.favoriteMovies = resp.FavoriteMovies;
-    })
-  }
-
-  addFavoriteMovies(MovieID: string, title: string): void {
-    this.fetchApiData.addFavoriteMovie(MovieID).subscribe((updatedUser: any) => {
-      this.user = updatedUser;
-      this.snackBar.open(`${title} has been added to your favorites.`, 'OK', {
-        duration: 3000
-      });
-      
     });
   }
 
-  removeFavoriteMovies(MovieID: string, title: string): void {
-    this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe((updatedUser: any) => {
-      this.user = updatedUser;
-      this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
-        duration: 3000,
+  addFavoriteMovies(MovieID: string, title: string): void {
+    this.fetchApiData
+      .addFavoriteMovie(MovieID)
+      .subscribe((updatedUser: any) => {
+        this.user = updatedUser;
+        this.snackBar.open(`${title} has been added to your favorites.`, "OK", {
+          duration: 3000,
+        });
       });
-    })
+  }
+
+  removeFavoriteMovies(MovieID: string, title: string): void {
+    this.fetchApiData
+      .deleteFavoriteMovie(MovieID)
+      .subscribe((updatedUser: any) => {
+        this.user = updatedUser;
+        this.snackBar.open(
+          `${title} has been removed from your favorites.`,
+          "OK",
+          {
+            duration: 3000,
+          }
+        );
+      });
   }
 
   isFavorite(MovieID: string): boolean {

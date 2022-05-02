@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { GenreViewComponent } from '../genre-view/genre-view.component';
-import { DirectorViewComponent } from '../director-view/director-view.component';
-import { DescriptionViewComponent } from '../description-view/description-view.component';
-import { Router } from '@angular/router';
-
+import { Component, OnInit } from "@angular/core";
+import { FetchApiDataService } from "../fetch-api-data.service";
+import { MatDialog } from "@angular/material/dialog";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { GenreViewComponent } from "../genre-view/genre-view.component";
+import { DirectorViewComponent } from "../director-view/director-view.component";
+import { DescriptionViewComponent } from "../description-view/description-view.component";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-user-favorites',
-  templateUrl: './user-favorites.component.html',
-  styleUrls: ['./user-favorites.component.scss']
+  selector: "app-user-favorites",
+  templateUrl: "./user-favorites.component.html",
+  styleUrls: ["./user-favorites.component.scss"],
 })
 export class UserFavoritesComponent implements OnInit {
   user: any = {};
@@ -23,7 +22,7 @@ export class UserFavoritesComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
     public router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     if (!localStorage.getItem("username")) {
@@ -40,21 +39,26 @@ export class UserFavoritesComponent implements OnInit {
   }
 
   getFavoriteMovies(): any {
-          this.favoriteMovies = this.movies.filter((movie: any) => {
-        return this.user.FavoriteMovies.includes(movie._id)
-      });
-      return this.favoriteMovies;
-    }
-  
+    this.favoriteMovies = this.movies.filter((movie: any) => {
+      return this.user.FavoriteMovies.includes(movie._id);
+    });
+    return this.favoriteMovies;
+  }
 
   removeFavoriteMovies(MovieID: string, title: string): void {
-    this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe((updatedUser: any) => {
-      this.user = updatedUser;
-      this.getFavoriteMovies();
-      this.snackBar.open(`${title} has been removed from your favorites.`, 'OK', {
-        duration: 3000,
+    this.fetchApiData
+      .deleteFavoriteMovie(MovieID)
+      .subscribe((updatedUser: any) => {
+        this.user = updatedUser;
+        this.getFavoriteMovies();
+        this.snackBar.open(
+          `${title} has been removed from your favorites.`,
+          "OK",
+          {
+            duration: 3000,
+          }
+        );
       });
-    });
   }
 
   openDirector(name: string, bio: string, birth: Date): void {
@@ -64,18 +68,18 @@ export class UserFavoritesComponent implements OnInit {
         Bio: bio,
         Birth: birth,
       },
-      width: '500px'
-    })
+      width: "500px",
+    });
   }
 
   openGenre(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: {
         Name: name,
-        Description: description
+        Description: description,
       },
-      width: '500px'
-    })
+      width: "500px",
+    });
   }
 
   openDescription(title: string, description: string): void {
@@ -84,7 +88,7 @@ export class UserFavoritesComponent implements OnInit {
         Title: title,
         Description: description,
       },
-      width: '500px'
-    })
+      width: "500px",
+    });
   }
 }

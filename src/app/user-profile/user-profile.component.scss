@@ -1,54 +1,52 @@
 .user-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
 }
 
 .mat-card {
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 50px;
-    background-color: #282323;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: #282323;
 }
 
 .user-form {
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 80%;
-    border: 1px solid black;
-    padding: 50px 25px 40px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    background-color: #EFE6D5;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 80%;
+  border: 1px solid black;
+  padding: 50px 25px 40px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  background-color: #efe6d5;
 }
 
 .user-header {
-    
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-    font-family: 'Josefin Sans',
-    sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .user-title {
-    font-size: 40px;
-    color: #EFE6D5
+  font-size: 40px;
+  color: #efe6d5;
 }
 
 .buttons {
-    display: flex; 
+  display: flex;
 }
 
 .action-button {
-    background-color: #38bbbb;
-    color: #EFE6D5;
+  background-color: #38bbbb;
+  color: #efe6d5;
 }
