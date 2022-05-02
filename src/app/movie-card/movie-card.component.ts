@@ -5,6 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DescriptionViewComponent } from '../description-view/description-view.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-movie-card',
@@ -19,15 +21,21 @@ export class MovieCardComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.fetchApiData.getAllMovies().subscribe((movies: any) => {
-      this.movies = movies;
-    })
-    this.fetchApiData.getUserProfile().subscribe((user: any) => {
-      this.user = user;
-})
+    if (!localStorage.getItem("username")) {
+      this.router.navigate(["welcome"]);
+    } else {
+      this.fetchApiData.getAllMovies().subscribe((movies: any) => {
+        this.movies = movies;
+      })
+      this.fetchApiData.getUserProfile().subscribe((user: any) => {
+        this.user = user;
+      })
+    }
   }
 
   getMovies(): void {

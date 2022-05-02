@@ -5,6 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { DescriptionViewComponent } from '../description-view/description-view.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user-favorites',
@@ -19,18 +21,22 @@ export class UserFavoritesComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public fetchApiData: FetchApiDataService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
-    this.fetchApiData.getAllMovies().subscribe((movies: any) => {
-      this.movies = movies;
-      this.fetchApiData.getUserProfile().subscribe((user: any) => {
-        this.user = user;
-        this.getFavoriteMovies();
-    });
+    if (!localStorage.getItem("username")) {
+      this.router.navigate(["welcome"]);
+    } else {
+      this.fetchApiData.getAllMovies().subscribe((movies: any) => {
+        this.movies = movies;
+        this.fetchApiData.getUserProfile().subscribe((user: any) => {
+          this.user = user;
+          this.getFavoriteMovies();
+        });
       });
-    
+    }
   }
 
   getFavoriteMovies(): any {
