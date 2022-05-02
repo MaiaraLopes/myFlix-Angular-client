@@ -14,7 +14,6 @@
           matInput
           [(ngModel)]="userDetails.Name"
           placeholder="Username"
-          value="{{ user.Username }}"
           type="text"
           name="Username"
           required
@@ -26,7 +25,6 @@
           matInput
           [(ngModel)]="userDetails.Password"
           placeholder="Password"
-          value="{{ user.Password }}"
           type="password"
           name="Password"
           required
@@ -38,7 +36,6 @@
           matInput
           [(ngModel)]="userDetails.Email"
           placeholder="Email"
-          value="{{ user.Email }}"
           type="email"
           name="Email"
           required
@@ -50,7 +47,6 @@
           matInput
           [(ngModel)]="userDetails.Birthdate"
           placeholder="Birthdate"
-          value="{{ user.Birthdate | date }}"
           type="date"
           name="Birthdate"
         />

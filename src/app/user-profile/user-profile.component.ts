@@ -14,10 +14,10 @@ export class UserProfileComponent implements OnInit {
   
 
   @Input() userDetails = {
-    Name: this.user.Name,
-    Email: this.user.Email,
+    Name: '',
+    Email: '',
     Password: '',
-    Birthdate: this.user.Birthdate
+    Birthdate: ''
   };
 
   constructor(
@@ -29,7 +29,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserProfile();
-    console.log(this.userDetails);
+    
   }
 
   getUserProfile(): void {
@@ -37,6 +37,9 @@ export class UserProfileComponent implements OnInit {
     if (user) {
       this.fetchApiData.getUserProfile().subscribe((res: any) => {
         this.user = res;
+        this.userDetails.Name = this.user.Username;
+        this.userDetails.Email = this.user.Email;
+        this.userDetails.Birthdate = this.user.Birthdate.substr(0, 10);
         console.log(this.user);
         return this.user;
       })
@@ -50,9 +53,7 @@ export class UserProfileComponent implements OnInit {
       this.snackBar.open('User profile was successfully updated.', 'OK', {
         duration: 2000,
       });
-      setTimeout(() => {
-        window.location.reload();
-      })
+      return this.user;
     })
   }
 
