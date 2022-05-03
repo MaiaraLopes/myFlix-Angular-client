@@ -27,7 +27,11 @@ export class UserProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUserProfile();
+    if (!localStorage.getItem("username")) {
+      this.router.navigate(["welcome"]);
+    } else {
+      this.getUserProfile();
+    }
   }
 
   getUserProfile(): void {
