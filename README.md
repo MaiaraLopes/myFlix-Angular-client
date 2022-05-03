@@ -1,6 +1,15 @@
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This is the front-end (cliend side) app of the [myFlix app](https://github.com/MaiaraLopes/Movies_API) based on its existing server-side code (REST API and database).
+
+## Hosted website
+
+You can check the website hosted on GitHub Pages [here](https://maiaralopes.github.io/myFlix-Angular-client/).
+
+## Technologies
+
+This app was made using Angular, Angular Materials and TypeScript.
 
 ## Development server
 
@@ -13,6 +22,20 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## App functionality
+
+User should:
+- be able to register
+- be able to login
+- see a list of all movies pulled from the database with their name and image
+- be able to click and view the movies genre, director and description
+- be able to favorite a movie by cicking on the favorite button and unfavorite it
+- navigate to their list of favorites
+- remove a movie from their favorites
+- access their profile
+- update their profile
+- delete their profile
 
 ## Running unit tests
 
