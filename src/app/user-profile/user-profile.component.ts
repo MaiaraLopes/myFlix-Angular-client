@@ -13,7 +13,7 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
 
   @Input() userDetails = {
-    Name: "",
+    Username: "",
     Email: "",
     Password: "",
     Birthdate: "",
@@ -35,7 +35,7 @@ export class UserProfileComponent implements OnInit {
     if (user) {
       this.fetchApiData.getUserProfile().subscribe((res: any) => {
         this.user = res;
-        this.userDetails.Name = this.user.Username;
+        this.userDetails.Username = this.user.Username;
         this.userDetails.Email = this.user.Email;
         this.userDetails.Birthdate = this.user.Birthdate.substr(0, 10);
         console.log(this.user);
@@ -47,7 +47,8 @@ export class UserProfileComponent implements OnInit {
   updateUser(): void {
     console.log(this.userDetails);
     this.fetchApiData.updateUserProfile(this.userDetails).subscribe((resp) => {
-      localStorage.setItem("user", JSON.stringify(resp));
+      localStorage.setItem("username", resp.Username);
+      this.user = resp;
       this.snackBar.open("User profile was successfully updated.", "OK", {
         duration: 2000,
       });
