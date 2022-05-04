@@ -1,3 +1,9 @@
+/**
+ * This component renders a mat dialog with a form which the user
+ * uses to submit their details to login to the app.
+ *
+ * @module UserLoginFormComponent
+ */
 import { Component, OnInit, Input } from "@angular/core";
 import { MatDialogRef } from "@angular/material/dialog";
 import { FetchApiDataService } from "../fetch-api-data.service";
@@ -21,14 +27,17 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //Function that sends the form inputs to the backend
+  /**
+   * Invokes the userLogin method with fetchApiData and userDetails from the form
+   * to log in the user. If successful, a message appears confirming the user is logged in.
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userDetails).subscribe(
       (result) => {
         //Successful user login
         localStorage.setItem("token", result.token);
         localStorage.setItem("username", result.user.Username);
-        this.dialogRef.close();
+        this.dialogRef.close(); //closes the modal if successful
         console.log(result);
         this.snackBar.open("User logged in successfully!", "OK", {
           duration: 2000,

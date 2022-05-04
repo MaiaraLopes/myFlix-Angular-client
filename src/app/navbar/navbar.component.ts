@@ -1,3 +1,9 @@
+/**
+ * This component is used to display the navbar at the top of the page
+ * once the user is logged in. It includes links to the different routes
+ * on the app, 'movies', 'my-list' and 'profile'. It also includes a logout button.
+ * @module NavbarComponent
+ */
 import { Component, OnInit } from "@angular/core";
 import { FetchApiDataService } from "../fetch-api-data.service";
 import { Router } from "@angular/router";

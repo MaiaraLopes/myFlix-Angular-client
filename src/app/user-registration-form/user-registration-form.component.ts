@@ -1,3 +1,8 @@
+/**
+ * This component is used to render a mat dialog containing a form
+ * which the user fills out to register their profile to the app.
+ * @module UserRegistrationFormComponent
+ */
 import { Component, OnInit, Input } from "@angular/core";
 import { MatDialogRef } from "@angular/material/dialog";
 import { FetchApiDataService } from "../fetch-api-data.service";
@@ -24,7 +29,10 @@ export class UserRegistrationFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //Function that sends the form inputs to the backend
+  /**
+   * Invokes the registerUser method with fetchApiData and userDetails from the form
+   * to register the user. If successful, a message appears confirming the user has been registered.
+   */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userDetails).subscribe(
       (result) => {

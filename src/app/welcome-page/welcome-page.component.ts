@@ -1,3 +1,9 @@
+/**
+ * This component is used to render a mat card that welcomes users to the app.
+ * It has two buttons for registration or log ig, which the user chooses accordingly.
+ *
+ * @module WelcomePageComponent
+ */
 import { Component, OnInit } from "@angular/core";
 import { UserLoginFormComponent } from "../user-login-form/user-login-form.component";
 import { UserRegistrationFormComponent } from "../user-registration-form/user-registration-form.component";
@@ -17,14 +23,14 @@ export class WelcomePageComponent implements OnInit {
       this.router.navigate(["movies"]);
     }
   }
-  //Open the registration dialog when sign up button is clicked
+  //Opens the registration dialog when sign up button is clicked
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: "280px",
     });
   }
 
-  //Open the login dialog when login button is clicked
+  //Opens the login dialog when login button is clicked
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: "280px",
