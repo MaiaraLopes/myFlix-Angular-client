@@ -1,3 +1,8 @@
+/**
+ * This class imports and declares all components used in the app,
+ * as well as import the modules. It also declares which path the app
+ * will take depending on what component is being called.
+ */
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
