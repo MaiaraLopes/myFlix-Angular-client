@@ -51,8 +51,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Screenshots
 
+/welcome
 [![1-Welcome.png](https://i.postimg.cc/G2xkHSY1/1-Welcome.png)](https://postimg.cc/34Wyq1nL)
+/movies
 [![2-Movies.png](https://i.postimg.cc/0j6NKcHN/2-Movies.png)](https://postimg.cc/V08w3Bwy)
+/profile
 [![3-Profile.png](https://i.postimg.cc/cJX1DVpH/3-Profile.png)](https://postimg.cc/R3JzhbV5)
 
 
