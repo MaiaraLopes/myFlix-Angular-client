@@ -7,9 +7,9 @@ This is the front-end (cliend side) app of the [myFlix app](https://github.com/M
 
 You can check the website hosted on GitHub Pages [here](https://maiaralopes.github.io/myFlix-Angular-client/).
 
-## Technologies
+## Built with
 
-This app was made using Angular, Angular Materials and TypeScript.
+This app was made using Angular, Angular Materials and TypeScript and it's responsive.
 
 ## Development server
 
