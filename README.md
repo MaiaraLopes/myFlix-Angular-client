@@ -1,7 +1,7 @@
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
-This is the front-end (cliend side) app of the [myFlix app](https://github.com/MaiaraLopes/Movies_API) based on its existing server-side code (REST API and database).
+This is the front-end (cliend side) app of the [myFlix API](https://github.com/MaiaraLopes/Movies_API) based on its existing server-side code (REST API and database).
 
 ## Hosted website
 
