@@ -51,7 +51,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Project Planning
 
+I created this Kanban board and updated it as the project unfolded. I added missing cards and moved them to the right column accordingly. It was a great satisfaction to see all steps filling the "Done!" column.
+
 [![4-Kanban.png](https://i.postimg.cc/Gm4RppDG/4-Kanban.png)](https://postimg.cc/hXR6ycpt)
+
+These user flows were created based on the project requirements and they helped me foresee how the application implementation would go.
+At the end, I made some updates to reflect the final product.
+
 [![5-PP1.png](https://i.postimg.cc/Nj64m6Rc/5-PP1.png)](https://postimg.cc/FYK3QJPW)
 ____________________________________________________________________________________
 [![6-PP2.png](https://i.postimg.cc/8zzRJ2kh/6-PP2.png)](https://postimg.cc/2VgbgXZ6)
