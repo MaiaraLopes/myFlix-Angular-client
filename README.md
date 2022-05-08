@@ -49,6 +49,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Project Planning
+
+[![4-Kanban.png](https://i.postimg.cc/Gm4RppDG/4-Kanban.png)](https://postimg.cc/hXR6ycpt)
+[![5-PP1.png](https://i.postimg.cc/Nj64m6Rc/5-PP1.png)](https://postimg.cc/FYK3QJPW)
+____________________________________________________________________________________
+[![6-PP2.png](https://i.postimg.cc/8zzRJ2kh/6-PP2.png)](https://postimg.cc/2VgbgXZ6)
+____________________________________________________________________________________
+[![7-PP3.png](https://i.postimg.cc/L8W1qhbp/7-PP3.png)](https://postimg.cc/9DGMKX28)
+____________________________________________________________________________________
+[![8-PP4.png](https://i.postimg.cc/Dzs886Gr/8-PP4.png)](https://postimg.cc/qtJkF8jq)
+
 ## Screenshots
 
 /welcome
